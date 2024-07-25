@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
 import IconButton from '../UI/IconButton';
 import MinusIcon from '../UI/Icons/MinusIcon';
