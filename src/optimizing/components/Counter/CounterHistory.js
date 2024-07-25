@@ -24,7 +24,7 @@ const CounterHistory = ({ history }) => {
   return (
     <ol>
       {history.map((count, index) => (
-        <HistoryItem key={index} count={count} />
+        <HistoryItem key={history.length - index} count={count} />
       ))}
     </ol>
   );

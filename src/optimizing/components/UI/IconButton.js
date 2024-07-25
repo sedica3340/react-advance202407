@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { log } from '../../log';
 
 const IconButton = ({ children, icon, ...props }) => {
@@ -12,4 +12,4 @@ const IconButton = ({ children, icon, ...props }) => {
     </button>
   );
 };
-export default IconButton;
+export default memo(IconButton);

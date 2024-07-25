@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { log } from '../../log';
 
 const CounterOutput = ({ value }) => {
@@ -7,4 +7,4 @@ const CounterOutput = ({ value }) => {
   const cssClass = value >= 0 ? 'counter-output' : 'counter-output negative';
   return <span className={cssClass}>{value}</span>;
 };
-export default CounterOutput;
+export default memo(CounterOutput);
