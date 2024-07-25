@@ -1,4 +1,4 @@
-import React, { useState, memo, useCallback } from 'react';
+import React, { useState, memo, useCallback, useEffect } from 'react';
 import CounterHistory from './CounterHistory';
 import IconButton from '../UI/IconButton';
 import MinusIcon from '../UI/Icons/MinusIcon';
@@ -34,6 +34,9 @@ const Counter = ({ initialCount }) => {
   // const [counter, setCounter] = useState(initialCount);
   const [counterChanges, setCounterChanges] = useState([initialCount]);
 
+  // useEffect(() => {
+  //   setCounterChanges([initialCount])
+  // }, [initialCount]);
   const currentCount = counterChanges.reduce((acc, cur) => acc + cur, 0);
 
   // useCallback hooks는 변경사항이 없는 함수를 재생성하지 않고
