@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ReduxCounter.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { counterActions } from "../store";
+import { counterActions } from "../store/counterSlice";
 
 const ReduxCounter = () => {
     // useSelector라는 훅을 이용해 store의 값을 꺼내온다는 사실 네놈을 이겨 눈물콧물 쏙다빼주마
