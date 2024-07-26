@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-import ReduxCounter from './redux-practice/components/ReduxCounter';
+import React, { useState } from "react";
+import ReduxCounter from "./redux-practice/components/ReduxCounter";
+import Header from "./redux-practice/components/Header";
+import Auth from "./redux-practice/components/Auth";
+import UserProfile from "./redux-practice/components/UserProfile";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  
-  
-
-  return (
-    <>
-      <ReduxCounter />
-    </>
-  );
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
+    return (
+        <>
+            <Header />
+            { isLoggedIn ? <UserProfile />: <Auth /> }
+            <ReduxCounter />
+        </>
+    );
 };
 
 export default App;

@@ -1,6 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-
 // 관리할 초기 상태값 객체
 const initialCountState = {
     counter: 0,
@@ -15,7 +14,7 @@ const initialCountState = {
  * prop3: reducers - 기존 리듀서에서 사용하던 내용들 (실제 액션)
  */
 const counterSlice = createSlice({
-    name: 'counter',
+    name: "counter",
     initialState: initialCountState,
     reducers: {
         increment(state) {
@@ -33,9 +32,22 @@ const counterSlice = createSlice({
     },
 });
 
+const initialAuthState = {
+    isLoggedIn: false,
+};
+const authSlice = createSlice({
+    name: "auth",
+    initialState: initialAuthState,
+    reducers: {
+        
+    },
+});
 
 const store = configureStore({
-    reducer: counterSlice.reducer
+    reducer: {
+        counter: counterSlice.reducer,
+        auth: authSlice.reducer,
+    },
 });
 
 export const counterActions = counterSlice.actions;
