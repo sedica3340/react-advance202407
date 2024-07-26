@@ -1,13 +1,14 @@
 import { createStore } from "redux";
 
-
 export const INC = "INC";
 export const DEC = "DEC";
 export const MULTI = "MULTI";
+export const TOGGLE = "TOGGLE";
 
 // 관리할 초기 상태값 객체
 const initialCountState = {
     counter: 0,
+    showCounter: true,
 };
 
 /**
@@ -21,11 +22,13 @@ const counterReducer = (state = initialCountState, action) => {
 
     switch (action.type) {
         case INC:
-            return { counter: state.counter + 1 };
+            return { ...state, counter: state.counter + 1 };
         case DEC:
-            return { counter: state.counter - 1 };
+            return { ...state, counter: state.counter - 1 };
         case MULTI:
-            return { counter: state.counter * action.payload };
+            return { ...state, counter: state.counter * action.payload };
+        case TOGGLE:
+            return { ...state, showCounter: !state.showCounter };
         default:
             return state;
     }
